@@ -27,8 +27,8 @@ def scrape_company_data(url):
         chrome_options.add_argument('--disable-dev-shm-usage')
 
         # Initialize Chrome WebDriver
-        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
-
+        chromedriver_path = os.path.join(os.getcwd(), 'chromedriver')  # Replace 'chromedriver' with the actual name of your Chrome WebDriver binary
+        driver = webdriver.Chrome(service=ChromeService(chromedriver_path), options=chrome_options)
         driver.get(url)
 
         # Wait for the page to load
