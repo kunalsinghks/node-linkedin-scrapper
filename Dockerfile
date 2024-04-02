@@ -18,6 +18,7 @@ RUN pip3 install --user -r requirements.txt
 
 # Copy the application code
 COPY . .
+COPY chromedriver .
 
 # Command to run the application
 CMD uvicorn main:app --host 0.0.0.0 --port $PORT
